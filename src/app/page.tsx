@@ -136,7 +136,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
+      <section className="bg-pattern">
         <div className="sm:mx-auto sm:w-full sm:max-w-7xl p-6">
           <Text label="Latest Promo 🔥" className="text-black text-3xl" />
           <Text
