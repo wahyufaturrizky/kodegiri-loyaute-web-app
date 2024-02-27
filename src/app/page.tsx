@@ -149,20 +149,16 @@ export default function Home() {
           <Swiper
             pagination={true}
             navigation={true}
-            modules={[Pagination]}
+            modules={[Pagination, Navigation]}
             className="mySwiper"
             slidesPerView={3}
             spaceBetween={30}
           >
-            <SwiperSlide>
-              <ImageNext alt="asds" width={800} height={400} priority src="/img-starbuck.jpg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <ImageNext alt="asds" width={800} height={400} priority src="/img-starbuck.jpg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <ImageNext alt="asds" width={800} height={400} priority src="/img-starbuck.jpg" />
-            </SwiperSlide>
+            {[1, 2, 3, 4].map((item) => (
+              <SwiperSlide key={item}>
+                <ImageNext alt="asds" width={800} height={400} priority src="/img-starbuck.jpg" />
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </section>
