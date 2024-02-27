@@ -35,7 +35,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="flex min-h-screen flex-col">
+    <main className="flex min-h-screen flex-col h-lvh">
       <section className="bg-section-welcome h-lvh">
         {/* Start Header */}
         <div className="sm:mx-auto sm:w-full sm:max-w-5xl p-6">
@@ -127,6 +127,10 @@ export default function Home() {
             />
           </div>
         </div>
+      </section>
+
+      <section>
+        <div className="sm:mx-auto sm:w-full sm:max-w-5xl p-6"></div>
       </section>
     </main>
   );
