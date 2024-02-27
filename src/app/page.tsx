@@ -14,6 +14,13 @@ import {
 } from "@/style/icon";
 import { createElement } from "react";
 
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper/modules";
+
 export default function Home() {
   const navMenu = [
     {
@@ -35,7 +42,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="flex min-h-screen flex-col h-lvh">
+    <main className="flex min-h-screen flex-col">
       <section className="bg-section-welcome h-lvh">
         {/* Start Header */}
         <div className="sm:mx-auto sm:w-full sm:max-w-5xl p-6">
@@ -130,7 +137,34 @@ export default function Home() {
       </section>
 
       <section>
-        <div className="sm:mx-auto sm:w-full sm:max-w-5xl p-6"></div>
+        <div className="sm:mx-auto sm:w-full sm:max-w-7xl p-6">
+          <Text label="Latest Promo 🔥" className="text-black text-3xl" />
+          <Text
+            label="Don't miss out! Limited time offer inside!"
+            className="text-[#959595] text-base"
+          />
+        </div>
+
+        <div className="relative h-[300px]">
+          <Swiper
+            pagination={true}
+            navigation={true}
+            modules={[Pagination]}
+            className="mySwiper"
+            slidesPerView={3}
+            spaceBetween={30}
+          >
+            <SwiperSlide>
+              <ImageNext alt="asds" width={800} height={400} priority src="/img-starbuck.jpg" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ImageNext alt="asds" width={800} height={400} priority src="/img-starbuck.jpg" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <ImageNext alt="asds" width={800} height={400} priority src="/img-starbuck.jpg" />
+            </SwiperSlide>
+          </Swiper>
+        </div>
       </section>
     </main>
   );
