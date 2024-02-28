@@ -20,24 +20,31 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+
   const navMenu = [
     {
       label: "Home",
       icon: HomeIcon,
+      path: "/",
     },
     {
       label: "History",
       icon: CalendarIcon,
+      path: "/history",
     },
     {
       label: "Inbox",
       icon: InboxIcon,
+      path: "/inbox",
     },
     {
       label: "Profile",
       icon: ProfileIcon,
+      path: "/profile",
     },
   ];
 
@@ -146,6 +153,7 @@ export default function Home() {
             <div className="flex items-center sm:gap-12 gap-4">
               {navMenu.map((item) => (
                 <div
+                  onClick={() => router.push(item.path)}
                   key={item.label}
                   className="flex group flex-col justify-center items-center sm:gap-2 gap-4 cursor-pointer"
                 >
@@ -163,7 +171,11 @@ export default function Home() {
             </div>
 
             <div className="flex items-center gap-6">
-              <NotifIcon />
+              <NotifIcon
+                style={{
+                  color: "white",
+                }}
+              />
 
               <div className="flex items-center gap-2">
                 <div>
