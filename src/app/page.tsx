@@ -50,6 +50,84 @@ export default function Home() {
     "/hokben.png",
   ];
 
+  const category = [
+    {
+      label: "All",
+      icon: "/ic-food.svg",
+    },
+    {
+      label: "Groceries",
+      icon: "/ic-groceries.svg",
+    },
+    {
+      label: "Beverages",
+      icon: "/ic-beverages.svg",
+    },
+    {
+      label: "Beverages",
+      icon: "/ic-beverages.svg",
+    },
+    {
+      label: "Beverages",
+      icon: "/ic-beverages.svg",
+    },
+    {
+      label: "Beverages",
+      icon: "/ic-beverages.svg",
+    },
+  ];
+
+  const itemReward = [
+    {
+      merchant: "/starbuck.png",
+      merchantTitle: "Starbucks",
+      title: "Monday Mood Booster Starbucks",
+      point: 250,
+    },
+    {
+      merchant: "/kfc.png",
+      merchantTitle: "KFC",
+      title: "KFC Value Serbu",
+      point: 172,
+    },
+    {
+      merchant: "/segari.png",
+      merchantTitle: "Segari",
+      title: "Poromo PASTISEGAR",
+      point: 104,
+    },
+    {
+      merchant: "/domino.png",
+      merchantTitle: "Domino’s Pizza",
+      title: "Domino’s: All i want for Christmas",
+      point: 53,
+    },
+    {
+      merchant: "/hokben.png",
+      merchantTitle: "HokBen",
+      title: "HokBen: Pay Day",
+      point: 147,
+    },
+    {
+      merchant: "/paper.png",
+      merchantTitle: "Paper Lunch",
+      title: "SENIN HEMAT",
+      point: 104,
+    },
+    {
+      merchant: "/matahari.png",
+      merchantTitle: "Matahari",
+      title: "Weekend SALE!",
+      point: 74,
+    },
+    {
+      merchant: "/kopken.png",
+      merchantTitle: "Kopi Kenangan",
+      title: "HARMANAS",
+      point: 87,
+    },
+  ];
+
   return (
     <main className="flex min-h-screen flex-col">
       <section className="bg-section-welcome h-lvh">
@@ -182,6 +260,67 @@ export default function Home() {
           <div className="flex items-center mt-12 justify-between">
             {merchant.map((item) => (
               <ImageNext key={item} alt="merchant" width={100} height={100} priority src={item} />
+            ))}
+          </div>
+
+          <Text label="Popular Rewards" className="text-black text-3xl mt-12" />
+          <Text label="Explore our latest popular rewards!" className="text-[#959595] text-base" />
+
+          <div className="flex flex-wrap gap-6 mt-12">
+            {category.map((item) => (
+              <div
+                key={item.label}
+                className={`${
+                  item.label === "All" ? "bg-blue-primary text-white" : "bg-[#F6F7FB] text-black"
+                } rounded-full py-2 px-4  `}
+              >
+                <Text label={item.label} className="text-base font-light" />
+              </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-4 gap-4 mt-12">
+            {itemReward.map((item, index) => (
+              <div key={item.title}>
+                <ImageNext
+                  alt="merchant"
+                  width={228}
+                  height={228}
+                  priority
+                  className="h-[228px] w-auto"
+                  src={`/reward-0${index + 1}.png`}
+                />
+
+                <div className="flex items-center gap-2 mt-4">
+                  <ImageNext
+                    alt={item.merchantTitle}
+                    width={24}
+                    height={24}
+                    priority
+                    className="h-[24px] w-auto rounded-full"
+                    src={item.merchant}
+                  />
+
+                  <Text label={item.merchantTitle} className="text-black font-light text-xs" />
+                </div>
+
+                <Text label={item.title} className="text-black mt-2" />
+
+                <Text label="Point earned" className="text-[#979797] mt-2 font-light" />
+
+                <div className="flex items-center gap-2 mt-1">
+                  <ImageNext
+                    alt={item.merchantTitle}
+                    width={19}
+                    height={19}
+                    priority
+                    className="h-[19px] w-auto"
+                    src="/ic-point.svg"
+                  />
+
+                  <Text label={String(item.point)} className="text-black font-light" />
+                </div>
+              </div>
             ))}
           </div>
         </div>
