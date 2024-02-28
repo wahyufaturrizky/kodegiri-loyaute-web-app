@@ -41,6 +41,15 @@ export default function Home() {
     },
   ];
 
+  const merchant = [
+    "/pizza.png",
+    "/starbuck.png",
+    "/mcd.png",
+    "/domino.png",
+    "/kfc.png",
+    "/hokben.png",
+  ];
+
   return (
     <main className="flex min-h-screen flex-col">
       <section className="bg-section-welcome h-lvh">
@@ -160,6 +169,21 @@ export default function Home() {
               </SwiperSlide>
             ))}
           </Swiper>
+        </div>
+      </section>
+
+      <section>
+        <div className="sm:mx-auto sm:w-full sm:max-w-5xl p-6">
+          <div className="flex items-center justify-between">
+            <Text label="Popular Merchant" className="text-black text-3xl" />
+            <Text label="view more" className="text-blue-link text-base" />
+          </div>
+
+          <div className="flex items-center mt-12 justify-between">
+            {merchant.map((item) => (
+              <ImageNext key={item} alt="merchant" width={100} height={100} priority src={item} />
+            ))}
+          </div>
         </div>
       </section>
     </main>

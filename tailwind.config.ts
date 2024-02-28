@@ -11,6 +11,7 @@ const config: Config = {
     extend: {
       colors: {
         "blue-primary": "#0074E0",
+        "blue-link": "#007DFC",
       },
     },
   },
