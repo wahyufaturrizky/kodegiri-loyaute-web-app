@@ -344,6 +344,8 @@ export default function Home() {
       </section>
 
       <section className="bg-instant h-[512px] bg-center"></section>
+
+      <section className="bg-footer h-[512px] bg-center"></section>
     </main>
   );
 }

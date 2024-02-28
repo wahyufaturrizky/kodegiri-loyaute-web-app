@@ -15,6 +15,10 @@
     @apply bg-[url('/instant-access.jpg')] bg-no-repeat bg-cover;
   }
 
+  .bg-footer {
+    @apply bg-[url('/footer.jpg')] bg-no-repeat bg-cover;
+  }
+
   .swiper {
     width: 100%;
     height: auto;
