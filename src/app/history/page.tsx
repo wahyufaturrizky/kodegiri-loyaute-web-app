@@ -172,6 +172,7 @@ export default function History() {
           }}
           columns={columns}
           dataSource={data}
+          scroll={{ x: 900 }}
         />
       ),
     },
@@ -262,7 +263,6 @@ export default function History() {
           </div>
         </div>
       </div>
-
       {/* End Header */}
 
       <section>

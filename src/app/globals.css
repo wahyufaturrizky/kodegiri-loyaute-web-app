@@ -7,6 +7,10 @@
     @apply bg-[url('/bg-section-welcome.svg')] bg-no-repeat bg-cover;
   }
 
+  .bg-banner-starbuck {
+    @apply bg-[url('/banner-starbuck.svg')] bg-no-repeat bg-cover;
+  }
+
   .bg-pattern {
     @apply bg-[url('/bg-swipper.jpg')] bg-repeat bg-cover;
   }

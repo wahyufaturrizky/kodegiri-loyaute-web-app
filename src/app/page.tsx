@@ -255,7 +255,14 @@ export default function Home() {
           >
             {[1, 2, 3, 4].map((item) => (
               <SwiperSlide key={item}>
-                <ImageNext alt="asds" width={800} height={400} priority src="/img-starbuck.jpg" />
+                <ImageNext
+                  onClick={() => router.push(`/voucher-detail/${item}`)}
+                  alt="asds"
+                  width={800}
+                  height={400}
+                  priority
+                  src="/img-starbuck.jpg"
+                />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -304,7 +311,11 @@ export default function Home() {
 
           <div className="grid grid-cols-4 gap-4 mt-12">
             {itemReward.map((item, index) => (
-              <div key={item.title}>
+              <div
+                className="cursor-pointer"
+                onClick={() => router.push(`/voucher-detail/${item.title}`)}
+                key={item.title}
+              >
                 <ImageNext
                   alt="merchant"
                   width={228}
